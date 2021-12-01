@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block body %}
+<div class="container-fluid my-3" >
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+      <img src="https://source.unsplash.com/900x300/?EMPTY" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+    <h1 class="text-center"> NOT AVAILABLE!!!!!!!!!! </h1>
+    <BR>
+    <BR>
+    <H1> BOOKS WILL BE AVAILABLE SOON!!</H1>
+{% for home in st %}
+    <div class="col"></div>
+    <div class="card" style="width: 28rem;">
+        <img src="{{home.image_url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" style="color:red;">{{home.title}}</h5>
+            <p class="card-text">RS{{home.quant}}</p>
+            <p class="card-text">RS{{home.price}}</p>
+            <a href="/fibuy/{{home.id}}" class="btn btn-primary">BUY NOW</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock body %}

@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block body %}
+<div class="container-fluid my-3" >
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+      <img src="https://source.unsplash.com/900x300/?book" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+    <h1 class="text-center" style="color:purple;"> BOOK AVAILABLE </h1>
+{% for home in cb %}
+    <div class="col"></div>
+    <div class="card" style="width: 28rem; my-5">
+        <img src="{{home.image_url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" style="color:#d00b0b;">BOOK: {{home.title}}</h5>
+            <h6 class="card-text" style="color:#d00b0b;">STOCK: {{home.quant}}</h6>
+            <h6 class="card-text" style="color:#b635f8;">PRICE: RS {{home.price}}</h6>
+            <a href="/fibuy/{{home.id}}" class="btn btn-primary">BUY NOW</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock body %}
