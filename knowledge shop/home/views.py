@@ -27,7 +27,7 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def sell(request, id):
+def sell(request):
     if request.method == "POST":
         id = request.POST.get('id')
         fname = request.POST.get('fname')
